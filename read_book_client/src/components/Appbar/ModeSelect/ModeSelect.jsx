@@ -27,7 +27,7 @@ function ModeSelect() {
   }
 
   return (
-    <FormControl sx={{ minWidth: '120px', color: 'black' }} size='small'>
+    <FormControl sx={{ color: 'black' }} size='small'>
       <InputLabel
         sx={useStyles.input}
       >
@@ -35,7 +35,7 @@ function ModeSelect() {
       </InputLabel>
       <Select
         value={mode}
-        label="Mode"
+        label="Giao diện"
         onChange={handleChange}
         sx={useStyles.select}
       >

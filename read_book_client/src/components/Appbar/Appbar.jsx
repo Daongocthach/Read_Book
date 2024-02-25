@@ -6,61 +6,45 @@ import { useSelector, useDispatch } from 'react-redux'
 import ModeSelect from './ModeSelect/ModeSelect'
 import Account from './Account/Account'
 import Search from './Search/Search'
-import G2Logo from '../../assets/img/G2Logo.png'
-import { setSubCategory } from '../../redux/actions/subCategory'
+import ReadBookLogo from '../../assets/img/ReadBookLogo.png'
 
 const useStyles = {
   button: {
     color: (theme) => (theme.palette.mode === 'dark' ? 'white' : 'black'), border: 'none', fontWeight: 'bold', '&:hover': { color: 'red' }
   }
 }
-const subCategory = {
-  id: '0',
-  name: ''
-}
 
 function AppBar() {
   const navigate = useNavigate()
-  const cart = useSelector(state => state.cart)
-  const [quantity, setQuantity] = useState(0)
   const dispatch = useDispatch()
 
   const onClickGenreDetail = () => {
-    dispatch(setSubCategory(subCategory))
     navigate('/genre-detail')
   }
-  useEffect(() => {
-    setQuantity(cart?.cartItems.length)
-  }, [cart])
   return (
     <Box sx={{
-      position: 'static', width: '100%', height: (theme) => theme.webCustom.appBarHeight, display: 'flex',
-      alignItems: 'center', justifyContent: 'space-between', border: 'none', overflow: 'auto',
-      bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#1C1C1C' : '#FFFAFA')
-    }}>
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, paddingX: 3 }}>
-        <img src={G2Logo} style={{ height: '60px', width: '60px', color: 'black' }} />
-        <Link to={'/'} style={{ textDecoration: 'none' }}>
-          <Typography variant="h4" fontWeight="bold" color={(theme) => (theme.palette.mode === 'dark' ? 'white' : '#363636')}> G2Store</Typography>
-        </Link>
-        <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 2 }}>
-          <Button sx={useStyles.button} onClick={onClickGenreDetail}>Sản phẩm</Button>
-          <Link to={'/promotion'}><Button sx={useStyles.button}>Khuyến mãi</Button></Link>
+      height: (theme) => theme.webCustom.appBarHeight, display: 'flex',
+      alignItems: 'center', justifyContent: 'space-between', border: 'none',
+      bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#1C1C1C' : '#1874CD')
+    }} paddingX={{ xs: 0, md: 5 }}>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+        <Link to={'/'} style={{ textDecoration: 'none' }}><img src={ReadBookLogo} style={{ height: '50px', width: '50px' }} /> </Link>
+        <Typography variant="h5" fontWeight="bold" color={'#E8E8E8'} display={{ xs: 'none', sm:'flex' }}>Read Book</Typography>
+        <Box sx={{ display: { md: 'flex' }, gap: 2 }}>
+          <Button sx={useStyles.button} onClick={onClickGenreDetail}>
+            <Typography variant="body1" fontWeight="bold" color={'#E8E8E8'}>Kho sách</Typography>
+          </Button>
+          <Link to={'/promotion'}>
+            <Button sx={useStyles.button}>
+              <Typography variant="body1" fontWeight="bold" color={'#E8E8E8'}>Tủ sách</Typography>
+            </Button>
+          </Link>
         </Box>
       </Box>
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, paddingX: 3 }}>
-        <Search />
-        <ModeSelect />
-        <Tooltip title="Cart">
-          <Badge color="warning" badgeContent={quantity} sx={{ cursor: 'pointer' }}>
-            <ShoppingCart sx={useStyles.button} onClick={() => navigate('/cart')} />
-          </Badge>
-        </Tooltip>
-        <Tooltip title="Help" sx={{ cursor: 'pointer' }}>
-          <HelpOutline sx={useStyles.button} />
-        </Tooltip>
+      <Box sx={{ alignItems: 'center', gap: 2, paddingX: 2 }}>
         <Account />
       </Box>
+
     </Box>
   )
 }

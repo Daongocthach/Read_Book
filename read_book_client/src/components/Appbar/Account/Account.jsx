@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { Menu, Box, Divider, MenuItem, ListItemIcon, Avatar, IconButton, Tooltip } from '@mui/material'
-import { Settings, PersonAdd } from '@mui/icons-material'
+import { Menu, Box, Divider, MenuItem, Avatar, IconButton, Tooltip } from '@mui/material'
+import { Settings, PersonAdd, LibraryAdd } from '@mui/icons-material'
 import { Link, useNavigate } from 'react-router-dom'
 import { deleteCookie } from '../../../utils/cookie'
 import { logout } from '../../../redux/actions/auth'
@@ -38,7 +38,7 @@ function Account() {
                     aria-haspopup="true"
                     aria-expanded={open ? 'true' : undefined}
                 >
-                    <Avatar sx={{ width: 32, height: 32 }}>
+                    <Avatar sx={{ width: 40, height: 40 }}>
                         {avatar && <img src={avatar} style={{ objectFit: 'cover', width: '100%', height: '100%' }} />}
                     </Avatar>
                 </IconButton>
@@ -57,9 +57,14 @@ function Account() {
                         <Avatar sx={{ mr: 3 }} />
                         Cá nhân
                     </Link>
-
                 </MenuItem>}
                 <Divider />
+                <MenuItem onClick={handleClose}>
+                    <Link to={'/login'} style={{ textDecoration: 'none', color: 'inherit', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <LibraryAdd fontSize="small" />
+                        Đăng truyện
+                    </Link>
+                </MenuItem>
                 {!avatar && <MenuItem onClick={handleClose}>
                     <Link to={'/login'} style={{ textDecoration: 'none', color: 'inherit', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <PersonAdd fontSize="small" />

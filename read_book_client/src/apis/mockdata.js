@@ -1,7 +1,7 @@
 export const mockData = {
-    products: [
+    books: [
         {
-            _id: 'product-id-01',
+            _id: 'book-id-01',
             name: 'Bánh gạo',
             description: 'Pro MERN stack Course',
             price: 100000,
@@ -40,7 +40,7 @@ export const mockData = {
             ]
         },
         {
-            _id: 'product-id-02',
+            _id: 'book-id-02',
             name: 'Chai nước',
             description: 'Pro MERN stack Course',
             price: 100000,
@@ -49,7 +49,7 @@ export const mockData = {
             provider: 'MasanGroup'
         },
         {
-            _id: 'product-id-03',
+            _id: 'book-id-03',
             name: 'Mì omachi',
             description: 'Pro MERN stack Course',
             price: 100000,
@@ -58,7 +58,7 @@ export const mockData = {
             provider: 'MasanGroup'
         },
         {
-            _id: 'product-id-04',
+            _id: 'book-id-04',
             name: 'Bóng đèn 10W',
             description: 'Pro MERN stack Course',
             price: 100000,
@@ -67,7 +67,7 @@ export const mockData = {
             provider: 'MasanGroup'
         },
         {
-            _id: 'product-id-05',
+            _id: 'book-id-05',
             name: 'Dao thái',
             description: 'Pro MERN stack Course',
             price: 100000,
@@ -76,7 +76,7 @@ export const mockData = {
             provider: 'MasanGroup'
         },
         {
-            _id: 'product-id-06',
+            _id: 'book-id-06',
             name: 'Dao thái1',
             description: 'Pro MERN stack Course',
             price: 100000,
@@ -85,7 +85,7 @@ export const mockData = {
             provider: 'MasanGroup'
         },
         {
-            _id: 'product-id-07',
+            _id: 'book-id-07',
             name: 'Dao thái2',
             description: 'Pro MERN stack Course',
             price: 100000,
@@ -94,7 +94,7 @@ export const mockData = {
             provider: 'MasanGroup'
         },
         {
-            _id: 'product-id-08',
+            _id: 'book-id-08',
             name: 'Dao thái',
             description: 'Pro MERN stack Course',
             price: 100000,
@@ -103,7 +103,7 @@ export const mockData = {
             provider: 'MasanGroup'
         },
         {
-            _id: 'product-id-09',
+            _id: 'book-id-09',
             name: 'Dao thái1',
             description: 'Pro MERN stack Course',
             price: 100000,
@@ -112,14 +112,14 @@ export const mockData = {
             provider: 'MasanGroup'
         },
         {
-            _id: 'product-id-010',
+            _id: 'book-id-010',
             name: 'Dao thái2',
             description: 'Pro MERN stack Course',
             price: 100000,
             image: 'https://trungquandev.com/wp-content/uploads/2022/07/fair-mern-stack-advanced-banner-trungquandev.jpg',
             category: 'Đồ gia dụng',
             provider: 'MasanGroup'
-        },
+        }
     ],
     categories: [
         {
@@ -138,6 +138,25 @@ export const mockData = {
             _id: 'category-id-04',
             name: 'Đồ điện tử'
         }
+
+    ],
+    authors: [
+        {
+            _id: 'author-id-01',
+            name: 'Donal Trump'
+        },
+        {
+            _id: 'author-id-02',
+            name: 'Biden'
+        },
+        {
+            _id: 'author-id-03',
+            name: 'Putin'
+        },
+        {
+            _id: 'author-id-04',
+            name: 'Nguyen Phu Trong'
+        },
 
     ],
     promotions: [

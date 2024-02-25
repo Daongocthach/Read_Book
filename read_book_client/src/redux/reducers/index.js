@@ -1,12 +1,12 @@
 
 import { combineReducers } from 'redux'
 import authReducer from './auth'
-import subCategoryReducer from './subCategory'
-import cartReducer from './cart'
+import categoryReducer from './category'
+import authorReducer from './author'
 const rootReducer = combineReducers({
     auth: authReducer,
-    subCategory: subCategoryReducer,
-    cart: cartReducer
+    category: categoryReducer,
+    author: authorReducer
 })
 
 export default rootReducer

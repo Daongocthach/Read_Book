@@ -23,7 +23,7 @@ function Search() {
             })
     }, [])
     return (
-        <Stack spacing={2} sx={{ width: 300 }}>
+        <Stack spacing={2} sx={{  }}>
             <Autocomplete
                 freeSolo
                 id="free-solo-2-demo"

@@ -6,8 +6,6 @@ import { setCookie } from '../../../utils/cookie'
 import authenApi from '../../../apis/authenApi'
 import loginImage from '../../../assets/img/loginImage.jpg'
 import { login } from '../../../redux/actions/auth'
-import { setCart } from '../../../redux/actions/cart'
-import cartItemApi from '../../../apis/cartItemApi'
 
 function Login() {
   const dispatch = useDispatch()
@@ -16,19 +14,19 @@ function Login() {
   const [password, setPassword] = useState('')
 
   const onFinish = () => {
-    authenApi.signin(username, password)
-      .then(response => {
-        dispatch(login(response.data))
-        setCookie('userId', response.data.id, 1)
-        cartItemApi.getCartItemsByCustomerId(response.data.id)
-          .then(response => { dispatch(setCart(response.data)) })
-        alert('Login Success')
+    // authenApi.signin(username, password)
+    //   .then(response => {
+    //     dispatch(login(response.data))
+    //     setCookie('userId', response.data.id, 1)
+    //     cartItemApi.getCartItemsByCustomerId(response.data.id)
+    //       .then(response => { dispatch(setCart(response.data)) })
+    //     alert('Login Success')
         navigate('/')
-      })
-      .catch(error => {
-        console.log(error)
-        alert('Wrong Username or Password')
-      })
+      // })
+      // .catch(error => {
+      //   console.log(error)
+      //   alert('Wrong Username or Password')
+      // })
   }
   return (
     <Container disableGutters maxWidth={false} sx={{ height: '100vh' }}>
